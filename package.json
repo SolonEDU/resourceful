@@ -1,19 +1,32 @@
 {
-  "name": "resourceful",
-  "version": "1.0.0",
-  "description": "SBUHacks 2020",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SolonEDU/resourceful.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SolonEDU/resourceful/issues"
-  },
-  "homepage": "https://github.com/SolonEDU/resourceful#readme"
+    "name": "resourceful",
+    "version": "1.0.0",
+    "description": "SBUHacks 2020",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SolonEDU/resourceful.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/SolonEDU/resourceful/issues"
+    },
+    "homepage": "https://github.com/SolonEDU/resourceful#readme",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "mongoose": "^5.10.7",
+        "nunjucks": "^3.2.2",
+        "passport": "^0.4.1",
+        "session": "^0.1.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    }
 }
