@@ -1,0 +1,19 @@
+{
+  "name": "resourceful",
+  "version": "1.0.0",
+  "description": "SBUHacks 2020",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SolonEDU/resourceful.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SolonEDU/resourceful/issues"
+  },
+  "homepage": "https://github.com/SolonEDU/resourceful#readme"
+}
