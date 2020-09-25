@@ -3,7 +3,6 @@ const express = require("express");
 const nunjucks = require("nunjucks");
 const mongoose = require("mongoose");
 const session = require("express-session");
-const passport = require("passport");
 
 const app = express();
 
