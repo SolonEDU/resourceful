@@ -1,68 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Resourceful - JavaScript</title>
-        <script
-            src="https://kit.fontawesome.com/0cf2afd459.js"
-            crossorigin="anonymous"
-        ></script>
-        <style>
-            @import url("/css/main.css");
-            @import url("/css/resources.css");
-        </style>
-    </head>
 
-    <body>
-        <main>
-            <nav class="no-select">
-                <header>
-                    <h2><a href="/">Resourceful</a></h2>
-                    <summary>
-                        <div>resourceful</div>
-                    </summary>
-                </header>
-                <div id="user-auth-buttons">
-                    <div><a href="/auth/logout">log out</a></div>
-                    <div><a href="">saved resources</a></div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resourceful - JavaScript</title>
+    <script src="https://kit.fontawesome.com/0cf2afd459.js" crossorigin="anonymous"></script>
+    <style>
+        @import url("/css/main.css");
+        @import url("/css/resources.css");
+    </style>
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resourceful - JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/0cf2afd459.js" crossorigin="anonymous"></script>
+    <style>
+        @import url("/css/main.css");
+        @import url("/css/resources.css");
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav class="no-select">
+            <header>
+                <h2><a href="/">Resourceful</a></h2>
+                <summary>
+                    <div>resourceful</div>
+                </summary>
+            </header>
+            <div id="user-auth-buttons">
+                <div><a href="/auth/logout">log out</a></div>
+                <div><a href="">saved resources</a></div>
+            </div>
+        </nav>
+        <section class="no-select">
+            <div style="align-self: flex-start;"><a href="/">Back to Computer Science</a></div>
+            <h2>JavaScript</h2>
+            <div id="resource-grid">
+                <div id="filter-section">
+                    filter section
                 </div>
-            </nav>
-            <section class="no-select">
-                <div style="align-self: flex-start">
-                    <a href="/">Back to Computer Science</a>
-                </div>
-                <h2>JavaScript</h2>
-                <div id="resource-grid">
-                    <div id="filter-section">filter section</div>
-                    <div>
-                        <div id="resource-container">
-                            {% for resource in resources %}
-                            <div class="resource">
-                                <div class="vote">
-                                    <div><i class="fas fa-arrow-up"></i></div>
-                                    <div class="vote-number">
-                                        { resource.votes }
-                                    </div>
-                                    <div><i class="fas fa-arrow-down"></i></div>
+                <div>
+                    <div id="resource-container">
+                        <div id="create-resource">
+                            <button type="button" class="arrow-container" data-toggle="modal"
+                                data-target="#create-resource-modal">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div>
+                                <div class="resource-title">Create Resource</div>
+                            </div>
+                        </div>
+                        {% for resource in resources %}
+                        <div class="resource">
+                            <div class="vote">
+                                <div><i class="fas fa-arrow-up"></i></div>
+                                <div class="vote-number">
+                                    { resource.votes }
                                 </div>
-                                <div class="info">
-                                    <div class="resource-title">
-                                        { resource.title }
-                                    </div>
-                                    <div class="resource-desc">
-                                        { resource.description }
-                                    </div>
-                                    <div class="resource-link">
-                                        { resource.link }
-                                    </div>
-                                    <div class="resource-level">
-                                        { resource.experienceLevel }
-                                    </div>
+                                <div><i class="fas fa-arrow-down"></i></div>
+                            </div>
+                            <div class="info">
+                                <div class="resource-title">
+                                    { resource.title }
+                                </div>
+                                <div class="resource-desc">
+                                    { resource.description }
+                                </div>
+                                <div class="resource-link">
+                                    { resource.link }
+                                </div>
+                                <div class="resource-level">
+                                    { resource.experienceLevel }
                                 </div>
                             </div>
-                            {% endfor %}
-                            <!-- <div class="resource">
+                        </div>
+                        {% endfor %}
+                        <!-- <div class="resource">
+                            <div class="vote">
+                                <div><i class="fas fa-arrow-up"></i></div>
+                                <div class="vote-number">14</div>
+                                <div><i class="fas fa-arrow-down"></i></div>
+                            </div>
+                            <div class="info">
+                                <div class="resource-title">title</div>
+                                <div class="resource-desc">desc</div>
+                                <div class="resource-link">link</div>
+                                <div class="resource-level">level</div>
+                            </div>
+                        </div>
+                        <div class="resource">
+                            <div class="vote">
+                                <div><i class="fas fa-arrow-up"></i></div>
+                                <div class="vote-number">14</div>
+                                <div><i class="fas fa-arrow-down"></i></div>
+                            </div>
+                            <div class="info">
+                                <div class="resource-title">title</div>
+                                <div class="resource-desc">desc</div>
+                                <div class="resource-link">link</div>
+                                <div class="resource-level">level</div>
+                            </div>
+                        </div>
+                        <div class="resource">
+                            <div class="vote">
+                                <div><i class="fas fa-arrow-up"></i></div>
+                                <div class="vote-number">14</div>
+                                <div><i class="fas fa-arrow-down"></i></div>
+                            </div>
+                            <div class="info">
+                                <div class="resource-title">title</div>
+                                <div class="resource-desc">desc</div>
+                                <div class="resource-link">link</div>
+                                <div class="resource-level">level</div>
+                            </div>
+                            <div class="resource">
                                 <div class="vote">
                                     <div><i class="fas fa-arrow-up"></i></div>
                                     <div class="vote-number">14</div>
@@ -101,20 +162,26 @@
                                     <div class="resource-level">level</div>
                                 </div>
                             </div>
-                            <div class="resource">
-                                <div class="vote">
-                                    <div><i class="fas fa-arrow-up"></i></div>
-                                    <div class="vote-number">14</div>
-                                    <div><i class="fas fa-arrow-down"></i></div>
+                            <div class="info">
+                                <div class="resource-title">title</div>
+                                <div class="resource-desc">desc</div>
+                                <div class="resource-link">
+                                    linklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklink
                                 </div>
-                                <div class="info">
-                                    <div class="resource-title">title</div>
-                                    <div class="resource-desc">desc</div>
-                                    <div class="resource-link">
-                                        linklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklink
-                                    </div>
-                                    <div class="resource-level">level</div>
-                                </div>
+                                <div class="resource-level">level</div>
+                            </div>
+                        </div>
+                        <div class="resource">
+                            <div class="vote">
+                                <div><i class="fas fa-arrow-up"></i></div>
+                                <div class="vote-number">14</div>
+                                <div><i class="fas fa-arrow-down"></i></div>
+                            </div>
+                            <div class="info">
+                                <div class="resource-title">title</div>
+                                <div class="resource-desc">desc</div>
+                                <div class="resource-link">link</div>
+                                <div class="resource-level">level</div>
                             </div>
                             <div class="resource">
                                 <div class="vote">
@@ -129,10 +196,54 @@
                                     <div class="resource-level">level</div>
                                 </div>
                             </div> -->
-                        </div>
                     </div>
                 </div>
-            </section>
-        </main>
-    </body>
+            </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal fade" id="create-resource-modal" tabindex="-1" aria-labelledby="create-resource-label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Create Resource</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="/">
+                    <div class="modal-body">
+                        <label for="title">Title</label>
+                        <input class="form-control" type="text" placeholder="Resource title" name="title" required>
+                        <label for="description">Description</label>
+                        <input class="form-control" type="text" placeholder="Resource description" name="description"
+                            required>
+                        <label for="link">Link</label>
+                        <input class="form-control" type="text" placeholder="Resource link" name="link" required>
+                        <label for="author">Author</label>
+                        <input class="form-control" type="text" placeholder="Resource author" name="author">
+                        <label for="level">Experience level</label>
+                        <select name="level" class="custom-select">
+                            <option selected value></option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                        <label for="type">Type</label>
+                        <select name="type" class="custom-select">
+                            <option value="Book">Book</option>
+                            <option value="Website">Website</option>
+                            <option value="Podcast">Podcast</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Create Resource</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

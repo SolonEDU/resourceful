@@ -1,4 +1,4 @@
-.resource {
+.resource, #create-resource {
     display: flex;
     flex-direction: row;
     background-color: white;
@@ -8,9 +8,17 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#create-resource button i {
+    margin-left: auto;
+    border-radius: 50%;
+    background-color: #89e894d5;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
 #filter-section {
     background-color: white;
-    visibility: hidden;
+    visibility: collapse;
 }
 
 #resource-grid {
