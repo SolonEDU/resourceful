@@ -28,7 +28,7 @@ router.post("/", async (req, res, next) => {
 
     await newTopic.save();
 
-    res.redirect(`/authenticated/category/${categoryId}`);
+    res.redirect(`/authenticated/topics/category/${categoryId}`);
 });
 
 // GET search topics handle
