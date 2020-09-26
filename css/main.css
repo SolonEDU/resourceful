@@ -115,3 +115,12 @@ summary:hover {
 .arrow-container:focus, button:focus {
     outline: 0;
 }
+
+label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+form input, form select {
+    margin-bottom: 1.15rem;
+}

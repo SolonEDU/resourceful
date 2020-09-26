@@ -17,12 +17,3 @@
 .centered-card h2 {
     margin-bottom: 1rem;
 }
-
-label {
-    font-weight: bold;
-    font-size: 1.25rem;
-}
-
-form input {
-    margin-bottom: 1.25rem;
-}

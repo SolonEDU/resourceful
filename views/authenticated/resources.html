@@ -146,7 +146,27 @@
                 </div>
                 <form method="POST" action="/">
                     <div class="modal-body">
-                        <input class="form-control" type="text" placeholder="Resource name" name="name">
+                        <label for="title">Title</label>
+                        <input class="form-control" type="text" placeholder="Resource title" name="title" required>
+                        <label for="description">Description</label>
+                        <input class="form-control" type="text" placeholder="Resource description" name="description" required>
+                        <label for="link">Link</label>
+                        <input class="form-control" type="text" placeholder="Resource link" name="link" required>
+                        <label for="author">Author</label>
+                        <input class="form-control" type="text" placeholder="Resource author" name="author">
+                        <label for="level">Experience level</label>
+                        <select name="level" class="custom-select">
+                            <option selected value></option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                        <label for="type">Type</label>
+                        <select name="type" class="custom-select">
+                            <option value="Book">Book</option>
+                            <option value="Website">Website</option>
+                            <option value="Podcast">Podcast</option>
+                        </select>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">Create Resource</button>
