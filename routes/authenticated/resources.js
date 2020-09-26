@@ -68,7 +68,7 @@ router.get("/:resourceId", async (req, res) => {
 
     const resource = await Resource.findById(resourceId);
 
-    const comments = await Comment.find({ resource: resource._id });
+    const comments = await Comment.find({ resource: resourceId });
 
     res.render("authenticated/resource.html", { resource, comments });
 });
@@ -79,7 +79,7 @@ router.post("/", async (req, res) => {
 
     await newResource.save();
 
-    res.redirect(`/authenticated/resources/${req.body.topic}`)
+    res.redirect(`/authenticated/resources/topic/${req.body.topic}`)
 });
 
 module.exports = router;
