@@ -11,5 +11,14 @@ router.get("/", async (req, res, next) => {
 });
 
 // POST create category handle
+router.post("/", async (req, res, next) => {
+    const { name } = req.body;
+
+    const newCategory = new Category({
+        name,
+    });
+
+    res.json(await newCategory.save());
+});
 
 module.exports = router;

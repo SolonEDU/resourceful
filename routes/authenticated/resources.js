@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+const Comment = require("../../models/Comment");
 const Resource = require("../../models/Resource");
 
 // GET resources for a topic page
@@ -16,7 +17,21 @@ router.get("/category/:categoryId/topic/:topicId", async (req, res, next) => {
 });
 
 // GET resource with comments page
+router.get("/:resourceId", async (req, res) => {
+    const { resourceId } = req.params;
+
+    const resource = await Resource.findById(resourceId);
+
+    const comments = await Comment.find({ resource: resource._id });
+
+    res.json({ resource: { ...resource, comments } });
+});
 
 // POST create resource handle
+router.post("/", async (req, res) => {
+    const newResource = new Resource(req.body);
+
+    res.json(await newResource.save());
+});
 
 module.exports = router;
