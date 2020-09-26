@@ -47,6 +47,8 @@ app.get("/", function (req, res) {
 });
 
 app.use("/auth", require("./routes/auth"));
+app.use("/authenticated", require("./routes/authenticated"));
+app.use("/unauthenticated", require("./routes/unauthenticated"));
 
 app.use(function (req, res, next) {
     res.status(404).send("Sorry can't find that!");
