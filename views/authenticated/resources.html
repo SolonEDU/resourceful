@@ -26,6 +26,7 @@
         @import url("/css/main.css");
         @import url("/css/resources.css");
     </style>
+    <script src="/js/vote.js"></script>
 </head>
 
 <body>
@@ -63,11 +64,11 @@
                         {% for resource in resources %}
                         <div class="resource">
                             <div class="vote">
-                                <div><i class="fas fa-arrow-up"></i></div>
-                                <div class="vote-number">
+                                <button onclick="vote({{resource.id}}, 1)"><i class="fas fa-arrow-up"></i></button>
+                                <div class="vote-number" id="vote-num-{{resource.id}}">
                                     { resource.votes }
                                 </div>
-                                <div><i class="fas fa-arrow-down"></i></div>
+                                <button onclick="vote({{resource.id}}, -1)"><i class="fas fa-arrow-down"></i></button>
                             </div>
                             <div class="info">
                                 <div class="resource-title">
