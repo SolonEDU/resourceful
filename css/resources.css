@@ -18,7 +18,7 @@
 
 #filter-section {
     background-color: white;
-    visibility: collapse;
+    visibility: hidden;
 }
 
 #resource-grid {
@@ -26,7 +26,7 @@
     width: 100%;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
 }
 
 .vote {
