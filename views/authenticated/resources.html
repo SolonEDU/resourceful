@@ -102,8 +102,14 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/">
+                <form method="POST" action="/authenticated/resources">
                     <div class="modal-body">
+                        <input
+                                class="form-control"
+                                type="hidden"
+                                value="{{topic._id}}"
+                                name="topic"
+                            />
                         <label for="title">Title</label>
                         <input class="form-control" type="text" placeholder="Resource title" name="title" required>
                         <label for="description">Description</label>
