@@ -46,8 +46,11 @@ app.use(flash());
 
 // Routes
 app.get("/", function (req, res) {
-    // TODO: Should this actually route to index.html?
-    res.render("authenticated/dashboard.html");
+    if (req.isAuthenticated()) {
+        res.redirect("/authenticated/dashboard");
+    } else {
+        res.redirect("/unauthenticated/dashboard");
+    }
 });
 
 app.use("/auth", require("./routes/auth"));
