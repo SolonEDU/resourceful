@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: small;
+    background-color: rgb(233, 233, 233);
     /* overflow-x: hidden; */
     /* background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
                 linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
@@ -123,23 +124,42 @@ section summary {
     display: grid;
     width: 90%;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1.5rem;
+    gap: 1.25rem;
+    padding-bottom: 1rem;
 }
 
 .category {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    background: white;
     margin-top: 2rem;
-    padding: 1rem;
+    padding: 1.25rem;
     border-radius: 5px;
-    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .cat-emoji {
-    text-align: left;
+    /* text-align: left; */
     font-size: 1.25rem;
 }
 
 .cat-title {
-    text-align: left;
+    /* text-align: left; */
     font-size: 1.25rem;
     font-weight: bold;
+}
+
+.arrow-container {
+    display: flex;
+}
+
+.category i {
+    /* align-self: flex-end; */
+    margin-left: auto;
+    border-radius: 50%;
+    background-color: #89e894d5;
+    padding: 0.5rem;
 }
