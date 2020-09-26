@@ -1,0 +1,28 @@
+.centered-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.centered-card div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    min-width: 35vw;
+}
+
+.centered-card h2 {
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+form input {
+    margin-bottom: 1.25rem;
+}
