@@ -56,3 +56,8 @@
     justify-content: flex-start;
     text-align: left;
 }
+
+.resource-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
