@@ -19,6 +19,8 @@ router.post("/", async (req, res, next) => {
     });
 
     await newCategory.save();
+
+    res.redirect("/authenticated/dashboard");
 });
 
 module.exports = router;
