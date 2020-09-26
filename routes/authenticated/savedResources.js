@@ -20,5 +20,17 @@ router.get("/", async (res, req, next) => {
 });
 
 // POST save resource handle
+router.post("/", async (req, res, next) => {
+    const { id } = req.session.passport.user;
+    const { resourceId } = req.body;
+
+    const newSavedResource = new savedResource({
+        resource: resourceId,
+        user: id,
+    });
+
+    await newSavedResource.save();
+});
+
 
 module.exports = router;
