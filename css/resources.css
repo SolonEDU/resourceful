@@ -28,6 +28,28 @@
     padding-right: 1rem;
 }
 
+.vote div i {
+    margin-left: auto;
+    border-radius: 50%;
+    padding: 0.35rem;
+
+}
+
+.vote div .fa-arrow-up {
+    background-color: #00ff1ed5;
+}
+
+.vote-number {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 1.25rem;
+    color: gray;
+}
+
+.vote div .fa-arrow-down {
+    background-color: #ff0000d5;
+}
+
 .info {
     display: flex;
     flex-direction: column;
