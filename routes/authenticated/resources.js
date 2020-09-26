@@ -79,12 +79,12 @@ router.post("/", async (req, res) => {
 
     await newResource.save();
 
-    const topic = await Topic.findById(req.body.topic);
-    const newNumResources = topic.numResources + 1;
-    topic.votes = newNumResources;
-    await topic.save();
+    await Topic.findOneAndUpdate(
+        { _id: req.body.topic },
+        { $inc: { "numResources": 1 } }
+    );
 
-    res.redirect(`/authenticated/resources/topic/${req.body.topic}`)
+    res.redirect(`/authenticated/resources/topic/${req.body.topic}`);
 });
 
 module.exports = router;
