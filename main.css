@@ -102,10 +102,6 @@ section summary {
     width: minmax(0, max-content);
 }
 
-#search-prompt form input {
-    width: 90%;
-}
-
 #user-auth-buttons {
     display: flex;
     flex-direction: row;

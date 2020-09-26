@@ -34,7 +34,12 @@
             <div id="search-prompt">
                 <summary>find the best resources to start learning anything <span id="action">now</span></summary>
                 <form>
-                    <input type="text">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for resources" aria-label="Resource search query">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
                 </form>
             </div>
             <div id="category-container">
