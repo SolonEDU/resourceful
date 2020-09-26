@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resourceful - Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+    <style>
+        @import url('/css/main.css');
+        @import url('/css/auth.css');
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav class="no-select">
+            <header>
+                <h2><a href="/">Resourceful</a></h2>
+                <summary>
+                    <div>resourceful</div>
+                </summary>
+            </header>
+            <div id="user-auth-buttons">
+                <div><a href="/auth/login">log in</a></div>
+                <div><a href="/auth/register">register</a></div>
+            </div>
+        </nav>
+        <section class="no-select" style="justify-content: center">
+            <form method="POST" action="/auth/login">
+                <div class="centered-card">
+                    <h2>Login</h2>
+                    <div>
+                        <label for="login-username">Username</label>
+                        <input type="text" class="form-control" placeholder="Enter username"
+                            aria-label="Enter username" required>
+                        <label for="login-password">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter password"
+                            aria-label="Enter password" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Login</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

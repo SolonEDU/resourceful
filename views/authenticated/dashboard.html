@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resourceful - Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/0cf2afd459.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('/css/main.css');
+        @import url('/css/dashboard.css');
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav class="no-select">
+            <header>
+                <h2><a href="/">Resourceful</a></h2>
+                <summary>
+                    <div>resourceful</div>
+                </summary>
+            </header>
+            <div id="user-auth-buttons">
+                <div><a href="/auth/login">log in</a></div>
+                <div><a href="/auth/register">register</a></div>
+            </div>
+        </nav>
+        <section class="no-select">
+            <div id="search-prompt">
+                <summary>find the best resources to start learning anything <span id="action">now</span></summary>
+                <form method="GET" action="/search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for topics" name="query"
+                            aria-label="Resource search query">
+                        <div class="input-group-append">
+                            <button style="z-index: -1;" class="btn btn-outline-secondary" type="submit"><i
+                                    class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="category-container">
+                <div class="category">
+                    <div>
+                        <div class="cat-title">Create Category</div>
+                    </div>
+                    <button type="button" class="arrow-container" data-toggle="modal"
+                        data-target="#create-category-modal">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="category">
+                    <div>
+                        <div class="cat-emoji">💻</div>
+                        <div class="cat-title">Computer Science</div>
+                    </div>
+                    <div class="arrow-container">
+                        <a href="http://google.com">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div>
+                        <div class="cat-emoji">🎶</div>
+                        <div class="cat-title">Music</div>
+                    </div>
+                    <div class="arrow-container">
+                        <a href="http://google.com">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div>
+                        <div class="cat-emoji">📚</div>
+                        <div class="cat-title">Literature</div>
+                    </div>
+                    <div class="arrow-container">
+                        <a href="http://google.com">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div>
+                        <div class="cat-emoji">➗</div>
+                        <div class="cat-title">Mathematics</div>
+                    </div>
+                    <div class="arrow-container">
+                        <a href="http://google.com">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div>
+                        <div class="cat-emoji">💸</div>
+                        <div class="cat-title">Finance</div>
+                    </div>
+                    <div class="arrow-container">
+                        <a href="http://google.com">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div>
+                        <div class="cat-emoji">🏥</div>
+                        <div class="cat-title">Health</div>
+                    </div>
+                    <div class="arrow-container">
+                        <a href="http://google.com">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div>
+                        <div class="cat-emoji">🎨</div>
+                        <div class="cat-title">Art</div>
+                    </div>
+                    <div class="arrow-container">
+                        <a href="http://google.com">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div>
+                        <div class="cat-emoji">💭</div>
+                        <div class="cat-title">Philosophy</div>
+                    </div>
+                    <div class="arrow-container">
+                        <a href="http://google.com">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal fade" id="create-category-modal" tabindex="-1" aria-labelledby="create-category-label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Create Category</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="/">
+                    <div class="modal-body">
+                        <input class="form-control" type="text" placeholder="Category name" name="name">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Create Category</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

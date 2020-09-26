@@ -43,12 +43,14 @@ app.use(flash());
 
 // Routes
 app.get("/", function (req, res) {
-    res.render("index.html");
+    // TODO: Should this actually route to index.html?
+    res.render("authenticated/dashboard.html");
 });
 
 app.use("/auth", require("./routes/auth"));
 app.use("/authenticated", require("./routes/authenticated"));
 app.use("/unauthenticated", require("./routes/unauthenticated"));
+app.use("/css", express.static("./css"))
 
 app.use(function (req, res, next) {
     res.status(404).send("Sorry can't find that!");
