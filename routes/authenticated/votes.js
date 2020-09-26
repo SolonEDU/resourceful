@@ -22,7 +22,7 @@ router.post("/", async (req, res, next) => {
     resource.votes = newVotes;
     await resource.save();
 
-    res.status(200).send('Created vote');
+    res.status(200).send("Created vote");
 });
 
 // DELETE delete vote handle
