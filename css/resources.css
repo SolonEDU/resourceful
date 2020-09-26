@@ -37,14 +37,19 @@
     padding-right: 1rem;
 }
 
-.vote div i {
+.vote button {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+.vote button i {
     margin-left: auto;
     border-radius: 50%;
     padding: 0.35rem;
-
 }
 
-.vote div .fa-arrow-up {
+.vote button .fa-arrow-up {
     background-color: #00ff1ed5;
 }
 
@@ -55,7 +60,7 @@
     color: gray;
 }
 
-.vote div .fa-arrow-down {
+.vote button .fa-arrow-down {
     background-color: #ff0000d5;
 }
 

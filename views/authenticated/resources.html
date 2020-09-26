@@ -2,17 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resourceful - JavaScript</title>
-    <script src="https://kit.fontawesome.com/0cf2afd459.js" crossorigin="anonymous"></script>
-    <style>
-        @import url("/css/main.css");
-        @import url("/css/resources.css");
-    </style>
-</head>
-
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resourceful - JavaScript</title>
@@ -46,9 +35,6 @@
         <section class="no-select">
             <h2>JavaScript</h2>
             <div id="resource-grid">
-                <div id="filter-section">
-                    filter section
-                </div>
                 <div>
                     <div id="resource-container">
                         <div id="create-resource">
@@ -63,11 +49,11 @@
                         {% for resource in resources %}
                         <div class="resource">
                             <div class="vote">
-                                <button onclick="vote({{resource.id}}, 1)"><i class="fas fa-arrow-up"></i></button>
+                                <button onclick="vote('{{resource.id}}', 1)"><i class="fas fa-arrow-up"></i></button>
                                 <div class="vote-number" id="vote-num-{{resource.id}}">
                                     {{ resource.votes }}
                                 </div>
-                                <button onclick="vote({{resource.id}}, -1)"><i class="fas fa-arrow-down"></i></button>
+                                <button onclick="vote('{{resource.id}}', -1)"><i class="fas fa-arrow-down"></i></button>
                             </div>
                             <div class="info">
                                 <div class="resource-title">
@@ -129,6 +115,9 @@
                             <option value="Book">Book</option>
                             <option value="Website">Website</option>
                             <option value="Podcast">Podcast</option>
+                            <option value="Course">Course</option>
+                            <option value="Video">Video</option>
+                            <option value="Article">Article</option>
                         </select>
                     </div>
                     <div class="modal-footer">
