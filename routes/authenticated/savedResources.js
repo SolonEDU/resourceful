@@ -33,5 +33,4 @@ router.post("/", async (req, res, next) => {
     await newSavedResource.save();
 });
 
-
 module.exports = router;
