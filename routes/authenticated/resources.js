@@ -3,15 +3,25 @@ const router = express.Router();
 
 const Comment = require("../../models/Comment");
 const Resource = require("../../models/Resource");
+const Vote = require("../../models/Vote");
 
 // GET resources for a topic page
 router.get("/topic/:topicId", async (req, res, next) => {
-    // const { id } = req.session.passport.user;
-    // TODO get user vote data for each resource
+    const { id } = req.session.passport.user;
 
     const { topicId } = req.params;
 
     const resources = await Resource.find({ topic: topicId });
+
+    resources.forEach((resource) => {
+        Vote.findOne({ resource: resource._id, user: id }).then((vote) => {
+            if (vote) {
+                resource.userVote = vote.value;
+            } else {
+                resource.userVote = null;
+            }
+        });
+    });
 
     res.render("authenticated/resources.html", { resources });
 });
