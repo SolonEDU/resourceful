@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const bodyParser = require("body-parser");
 const nunjucks = require("nunjucks");
 const mongoose = require("mongoose");
 const session = require("express-session");
@@ -8,7 +9,9 @@ const flash = require("connect-flash");
 
 const app = express();
 
-app.use(express.json());
+// Configure Body-Parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configure Nunjucks
 nunjucks.configure("views", {
@@ -50,7 +53,7 @@ app.get("/", function (req, res) {
 app.use("/auth", require("./routes/auth"));
 app.use("/authenticated", require("./routes/authenticated"));
 app.use("/unauthenticated", require("./routes/unauthenticated"));
-app.use("/css", express.static("./css"))
+app.use("/css", express.static("./css"));
 
 app.use(function (req, res, next) {
     res.status(404).send("Sorry can't find that!");
