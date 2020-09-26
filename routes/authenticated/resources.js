@@ -14,7 +14,9 @@ router.get("/topic/:topicId", async (req, res, next) => {
 
     const topic = await Topic.findById(topicId);
 
-    const resources = await Resource.find({ topic: topicId }).sort({ votes: "desc" });
+    const resources = await Resource.find({ topic: topicId }).sort({
+        votes: "desc",
+    });
 
     resources.forEach((resource) => {
         Vote.findOne({ resource: resource._id, user: id }).then((vote) => {
@@ -27,6 +29,33 @@ router.get("/topic/:topicId", async (req, res, next) => {
     });
 
     res.render("authenticated/resources.html", { topic, resources });
+});
+
+// GET filtered resources
+router.get("/topic/:topicId", async (req, res, next) => {
+    const { id } = req.session.passport.user;
+
+    const { topicId } = req.params;
+    const { typeFilter } = req.params;
+
+    const topic = await Topic.findById(topicId);
+
+    const resources = await Resource.find({
+        topic: topicId,
+        type: typeFilter,
+    }).sort({ votes: "desc" });
+
+    resources.forEach((resource) => {
+        Vote.findOne({ resource: resource._id, user: id }).then((vote) => {
+            if (vote) {
+                resource.userVote = vote.value;
+            } else {
+                resource.userVote = null;
+            }
+        });
+    });
+
+    res.render("authenticated/resources.html", { topic, resources, typeFilter });
 });
 
 // GET resource with comments page
