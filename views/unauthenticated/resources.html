@@ -32,7 +32,7 @@
             </div>
         </nav>
         <section class="no-select">
-            <h2>JavaScript</h2>
+            <h2>{{topic.name}}</h2>
             <div id="resource-grid">
                 <div>
                     <div id="resource-container">
@@ -44,6 +44,9 @@
                                 </div>
                                 <div class="resource-desc">
                                     <b>Description: </b>{{ resource.description }}
+                                </div>
+                                <div class="resource-author">
+                                    <b>Author: </b>{{ resource.author }}
                                 </div>
                                 <div class="resource-link">
                                     <b>Resource link: </b><a style="color: blue;" href="{{ resource.link }}">{{ resource.link }}</a>

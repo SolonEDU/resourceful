@@ -34,62 +34,23 @@
         <section class="no-select">
             <div id="container">
                 <div id="resource-card">
-                    <h2>Resource name</h2>
+                    <h2>{{resource.title}}</h2>
                     <div>
-                        <b>Description: </b>This is a description
+                        <b>Description: </b>{{ resource.description }}
                     </div>
                     <div>
-                        <b>Resource link: </b> <a href="http://google.com">Google</a>
+                        <b>Author: </b>{{ resource.author }}
                     </div>
                     <div>
-                        <b>Experience level: </b> Beginner
+                        <b>Resource link: </b> <a style="color: blue;" href="{{ resource.link }}">{{ resource.link }}</a>
                     </div>
                     <div>
-                        <b>Resource type: </b> Website
+                        <b>Experience level: </b> {{ resource.experienceLevel }}
+                    </div>
+                    <div>
+                        <b>Resource type: </b> {{resource.type}}
                     </div>
                 </div>
-                <div id="comment-section">
-                    <h2>Comments</h2>
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Make a comment" name="query"
-                                aria-label="comment" />
-                            <div class="input-group-append">
-                                <button style="z-index: 0" class="btn btn-outline-secondary" type="submit">
-                                    <i class="fas fa-reply"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <!-- <div id="comment-section">
-                    <h2>Comments</h2>
-                    <form>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Make a comment" name="query"
-                                    aria-label="comment" />
-                                <div class="input-group-append">
-                                    <button style="z-index: 0" class="btn btn-outline-secondary" type="submit">
-                                        <i class="fas fa-reply"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="comment">
-                        This is a comment
-                    </div>
-                    <div class="comment">
-                        This is a comment
-                    </div>
-                    <div class="comment">
-                        This is a comment
-                    </div>
-                    <div class="comment">
-                        This is a comment
-                    </div>
-                </div> -->
             </div>
         </section>
     </main>

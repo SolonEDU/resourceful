@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resourceful - JavaScript</title>
+    <title>Resourceful</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -33,7 +33,7 @@
             </div>
         </nav>
         <section class="no-select">
-            <h2>JavaScript</h2>
+            <h2>{{topic.name}}</h2>
             <div id="resource-grid">
                 <div>
                     <div id="resource-container">
@@ -61,6 +61,9 @@
                                 </div>
                                 <div class="resource-desc">
                                     <b>Description: </b>{{ resource.description }}
+                                </div>
+                                <div class="resource-author">
+                                    <b>Author: </b>{{ resource.author }}
                                 </div>
                                 <div class="resource-link">
                                     <b>Resource link: </b> <a style="color: blue;" href="{{ resource.link }}">{{ resource.link }}</a>
