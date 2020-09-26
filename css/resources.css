@@ -10,6 +10,7 @@
 
 #filter-section {
     background-color: white;
+    visibility: hidden;
 }
 
 #resource-grid {
