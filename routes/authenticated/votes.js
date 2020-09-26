@@ -9,8 +9,10 @@ router.post("/", async (req, res, next) => {
     const userId = req.session.passport.user;
     const { resourceId, value } = req.body;
 
+    const voteVal = Number(value);
+
     const newVote = new Vote({
-        value,
+        voteVal,
         resource: resourceId,
         user: userId,
     });

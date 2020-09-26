@@ -2,17 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resourceful - JavaScript</title>
-    <script src="https://kit.fontawesome.com/0cf2afd459.js" crossorigin="anonymous"></script>
-    <style>
-        @import url("/css/main.css");
-        @import url("/css/resources.css");
-    </style>
-</head>
-
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resourceful - JavaScript</title>
@@ -64,11 +53,11 @@
                         {% for resource in resources %}
                         <div class="resource">
                             <div class="vote">
-                                <button onclick="vote({{resource.id}}, 1)"><i class="fas fa-arrow-up"></i></button>
+                                <button onclick="vote('{{resource.id}}', 1)"><i class="fas fa-arrow-up"></i></button>
                                 <div class="vote-number" id="vote-num-{{resource.id}}">
                                     {{ resource.votes }}
                                 </div>
-                                <button onclick="vote({{resource.id}}, -1)"><i class="fas fa-arrow-down"></i></button>
+                                <button onclick="vote('{{resource.id}}', -1)"><i class="fas fa-arrow-down"></i></button>
                             </div>
                             <div class="info">
                                 <div class="resource-title">
@@ -121,7 +110,7 @@
                         <input class="form-control" type="text" placeholder="Resource author" name="author">
                         <label for="level">Experience level</label>
                         <select name="level" class="custom-select">
-                            <option selected value></option>
+                            <option value></option>
                             <option value="Beginner">Beginner</option>
                             <option value="Intermediate">Intermediate</option>
                             <option value="Advanced">Advanced</option>
@@ -131,6 +120,9 @@
                             <option value="Book">Book</option>
                             <option value="Website">Website</option>
                             <option value="Podcast">Podcast</option>
+                            <option value="Course">Course</option>
+                            <option value="Video">Video</option>
+                            <option value="Article">Article</option>
                         </select>
                     </div>
                     <div class="modal-footer">
