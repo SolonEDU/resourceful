@@ -30,19 +30,19 @@
             </div>
         </nav>
         <section class="no-select" style="justify-content: center">
-            <form>
+            <form method="POST" action="/auth/register">
                 <div class="centered-card">
                     <h2>Register</h2>
                     <div>
                         <label for="register-username">Username</label>
                         <input type="text" class="form-control" placeholder="Enter username"
-                            aria-label="Enter username">
+                            aria-label="Enter username" name="username" id="username" required>
                         <label for="register-password">Password</label>
-                        <input type="text" class="form-control" placeholder="Enter password"
-                            aria-label="Enter password">
+                        <input type="password" class="form-control" placeholder="Enter password"
+                            aria-label="Enter password" name="password" id="password" required>
                         <label for="register-password-confirm">Confirm Password</label>
-                        <input type="text" class="form-control" placeholder="Confirm password"
-                            aria-label="Confirm password">
+                        <input type="password" class="form-control" placeholder="Confirm password"
+                            aria-label="Confirm password" required>
                     </div>
                     <button type="submit" class="btn btn-success">Register</button>
                 </div>

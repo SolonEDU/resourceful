@@ -30,16 +30,16 @@
             </div>
         </nav>
         <section class="no-select" style="justify-content: center">
-            <form>
+            <form method="POST" action="/auth/login">
                 <div class="centered-card">
                     <h2>Login</h2>
                     <div>
                         <label for="login-username">Username</label>
                         <input type="text" class="form-control" placeholder="Enter username"
-                            aria-label="Enter username">
+                            aria-label="Enter username" required>
                         <label for="login-password">Password</label>
-                        <input type="text" class="form-control" placeholder="Enter password"
-                            aria-label="Enter password">
+                        <input type="password" class="form-control" placeholder="Enter password"
+                            aria-label="Enter password" required>
                     </div>
                     <button type="submit" class="btn btn-success">Login</button>
                 </div>

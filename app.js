@@ -43,6 +43,7 @@ app.use(flash());
 
 // Routes
 app.get("/", function (req, res) {
+    // TODO: Should this actually route to index.html?
     res.render("authenticated/dashboard.html");
 });
 
