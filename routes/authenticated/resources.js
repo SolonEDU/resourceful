@@ -5,7 +5,7 @@ const Comment = require("../../models/Comment");
 const Resource = require("../../models/Resource");
 
 // GET resources for a topic page
-router.get("/category/:categoryId/topic/:topicId", async (req, res, next) => {
+router.get("/topic/:topicId", async (req, res, next) => {
     // const { id } = req.session.passport.user;
     // TODO get user vote data for each resource
 
@@ -24,14 +24,14 @@ router.get("/:resourceId", async (req, res) => {
 
     const comments = await Comment.find({ resource: resource._id });
 
-    res.json({ resource: { ...resource, comments } });
+    res.render("authenticated/resource.html", {resource, comments})
 });
 
 // POST create resource handle
 router.post("/", async (req, res) => {
     const newResource = new Resource(req.body);
 
-    res.json(await newResource.save());
+    await newResource.save();
 });
 
 module.exports = router;

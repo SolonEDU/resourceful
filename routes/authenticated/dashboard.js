@@ -18,7 +18,7 @@ router.post("/", async (req, res, next) => {
         name,
     });
 
-    res.json(await newCategory.save());
+    await newCategory.save();
 });
 
 module.exports = router;

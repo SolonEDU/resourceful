@@ -4,9 +4,8 @@ const router = express.Router();
 const Comment = require("../../models/Comment");
 
 // POST create comment handle
-router.post("/:resourceId/:userId", async (req, res, next) => {
-    const { resourceId, userId } = req.params;
-    const { content } = req.body;
+router.post("/", async (req, res, next) => {
+    const { resourceId, userId, content } = req.body;
 
     const newComment = new Comment({
         content,
@@ -14,7 +13,7 @@ router.post("/:resourceId/:userId", async (req, res, next) => {
         user: userId,
     });
 
-    res.json(await newComment.save());
+    await newComment.save();
 });
 
 module.exports = router;
