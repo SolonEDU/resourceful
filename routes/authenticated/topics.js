@@ -39,6 +39,8 @@ router.get("/search", async (req, res, next) => {
         name: { $regex: ".*" + query + ".*", $options: "i" },
     }).sort({ name: "asc" });
 
+    console.log(topics);
+
     res.render("authenticated/search.html", { topics });
 });
 

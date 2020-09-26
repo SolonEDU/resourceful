@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resourceful -</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script
+            src="https://kit.fontawesome.com/0cf2afd459.js"
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            @import url("/css/main.css");
+            @import url("/css/dashboard.css");
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <nav class="no-select">
+                <header>
+                    <h2><a href="/">Resourceful</a></h2>
+                    <summary>
+                        <div>resourceful</div>
+                    </summary>
+                </header>
+                <div id="user-auth-buttons">
+                    <div><a href="/auth/login" class="btn btn-outline-success mx-2">log in</a></div>
+                    <div><a href="/auth/register" class="btn btn-outline-success mx-2">register</a></div>
+                </div>
+            </nav>
+            <section class="no-select">
+                <div id="topic-container">
+                    {% for topic in topics %}
+                    <div class="topic">
+                        <div>
+                            <div class="topic-title">{{ topic.name }}</div>
+                            <div class="topic-num">
+                                {{ topic.numResources }} resources
+                            </div>
+                        </div>
+                        <div class="arrow-container">
+                            <a href="/authenticated/resources/topic/{{topic._id}}">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="topic">
+                        <div>
+                            <div class="topic-title">JavaScript</div>
+                            <div class="topic-num">10 resources</div>
+                        </div>
+                        <div class="arrow-container">
+                            <a href="http://google.com">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="topic">
+                        <div>
+                            <div class="topic-title">Python</div>
+                            <div class="topic-num">24 resources</div>
+                        </div>
+                        <div class="arrow-container">
+                            <a href="http://google.com">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="topic">
+                        <div>
+                            <div class="topic-title">
+                                Artificial Intelligence
+                            </div>
+                            <div class="topic-num">4 resources</div>
+                        </div>
+                        <div class="arrow-container">
+                            <a href="http://google.com">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="topic">
+                        <div>
+                            <div class="topic-title">Blockchain</div>
+                            <div class="topic-num">6 resources</div>
+                        </div>
+                        <div class="arrow-container">
+                            <a href="http://google.com">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="topic">
+                        <div>
+                            <div class="topic-title">Java</div>
+                            <div class="topic-num">12 resources</div>
+                        </div>
+                        <div class="arrow-container">
+                            <a href="http://google.com">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="topic">
+                        <div>
+                            <div class="topic-title">Databases</div>
+                            <div class="topic-num">7 resources</div>
+                        </div>
+                        <div class="arrow-container">
+                            <a href="http://google.com">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+        </main>
+    </body>
 </html>
