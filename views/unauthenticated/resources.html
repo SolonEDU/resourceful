@@ -38,6 +38,15 @@
                     <div id="resource-container">
                         {% for resource in resources %}
                         <div class="resource">
+                            <div class="vote">
+                                <div class="vote">
+                                    <button><i class="fas fa-arrow-up"></i></button>
+                                    <div class="vote-number" id="vote-num-{{resource.id}}">
+                                        {{ resource.votes }}
+                                    </div>
+                                    <button><i class="fas fa-arrow-down"></i></button>
+                                </div>
+                            </div>
                             <div class="info">
                                 <div class="resource-title">
                                     <a href="/unauthenticated/resources/{{resource.id}}">{{ resource.title }}</a>
