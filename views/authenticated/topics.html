@@ -81,9 +81,9 @@
                     {% for topic in topics %}
                     <div class="topic">
                         <div>
-                            <div class="topic-title">{ topic.name }</div>
+                            <div class="topic-title">{{ topic.name }}</div>
                             <div class="topic-num">
-                                { topic.numResources } resources
+                                {{ topic.numResources }} resources
                             </div>
                         </div>
                         <div class="arrow-container">
@@ -186,6 +186,13 @@
                     </div>
                     <form method="POST" action="/authenticated/topics">
                         <div class="modal-body">
+                            <input
+                                class="form-control"
+                                type="text"
+                                value="{{category._id}}"
+                                name="categoryId"
+                                readonly
+                            />
                             <input
                                 class="form-control"
                                 type="text"
