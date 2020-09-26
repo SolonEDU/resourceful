@@ -14,7 +14,7 @@ router.get("/topic/:topicId", async (req, res, next) => {
 
     const topic = await Topic.findById(topicId);
 
-    const resources = await Resource.find({ topic: topicId });
+    const resources = await Resource.find({ topic: topicId }).sort({ votes: "desc" });
 
     resources.forEach((resource) => {
         Vote.findOne({ resource: resource._id, user: id }).then((vote) => {
