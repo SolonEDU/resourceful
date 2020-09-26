@@ -5,9 +5,9 @@ const SavedResource = require("../../models/SavedResource");
 
 // GET saved resources page
 router.get("/", async (res, req, next) => {
-    const { id } = req.session.passport.user;
+    const userId = req.session.passport.user;
 
-    const savedResources = await SavedResource.find({ user: id }).populate(
+    const savedResources = await SavedResource.find({ user: userId }).populate(
         "resource"
     );
 
@@ -21,16 +21,15 @@ router.get("/", async (res, req, next) => {
 
 // POST save resource handle
 router.post("/", async (req, res, next) => {
-    const { id } = req.session.passport.user;
+    const userId = req.session.passport.user;
     const { resourceId } = req.body;
 
     const newSavedResource = new savedResource({
         resource: resourceId,
-        user: id,
+        user: userId,
     });
 
     await newSavedResource.save();
 });
-
 
 module.exports = router;

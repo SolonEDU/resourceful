@@ -27,14 +27,14 @@
                 </summary>
             </header>
             <div id="user-auth-buttons">
-                <div><a href="/auth/login">log in</a></div>
-                <div><a href="/auth/register">register</a></div>
+                <div><a href="/auth/login" class="btn btn-outline-success mx-2">log in</a></div>
+                <div><a href="/auth/register" class="btn btn-outline-success mx-2">register</a></div>
             </div>
         </nav>
         <section class="no-select">
             <div id="search-prompt">
                 <summary>find the best resources to start learning anything <span id="action">now</span></summary>
-                <form method="GET" action="/search">
+                <form method="GET" action="/unauthenticated/topics/search">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for topics" name="query"
                             aria-label="Resource search query">
