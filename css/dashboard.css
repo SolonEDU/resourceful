@@ -13,7 +13,7 @@ section summary {
     width: minmax(0, max-content);
 }
 
-#category-container {
+#category-container, #topic-container {
     display: grid;
     width: 90%;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -21,7 +21,7 @@ section summary {
     padding-bottom: 1rem;
 }
 
-.category {
+.category, .topic {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -34,12 +34,12 @@ section summary {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.cat-emoji {
+.cat-emoji, .topic-num {
     font-size: 1.25rem;
     padding-bottom: 0.5rem;
 }
 
-.cat-title {
+.cat-title, .topic-title {
     font-size: 1.25rem;
     font-weight: bold;
 }
@@ -57,7 +57,7 @@ a i {
     color: black;
 }
 
-.category i {
+.category i, .topic i {
     margin-left: auto;
     border-radius: 50%;
     background-color: #89e894d5;
