@@ -5,6 +5,7 @@ const SavedResource = require("../../models/SavedResource");
 
 // GET saved resources page
 router.get("/", async (res, req, next) => {
+    console.log(req.session);
     const { id } = req.session.passport.user;
 
     const savedResources = await SavedResource.find({ user: id }).populate(
