@@ -44,15 +44,6 @@ section summary {
     font-weight: bold;
 }
 
-.arrow-container {
-    border: none;
-    background-color: transparent;
-}
-
-.arrow-container:focus, button:focus {
-    outline: 0;
-}
-
 a i {
     color: black;
 }

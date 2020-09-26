@@ -106,3 +106,12 @@ summary:hover {
     color: black;
     text-decoration: none;
 }
+
+.arrow-container {
+    border: none;
+    background-color: transparent;
+}
+
+.arrow-container:focus, button:focus {
+    outline: 0;
+}
