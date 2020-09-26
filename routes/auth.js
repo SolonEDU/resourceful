@@ -49,7 +49,7 @@ router.post("/register", function (req, res, next) {
                         newUser
                             .save()
                             .then((user) => {
-                                res.redirect("/users/login");
+                                res.redirect("/auth/login");
                             })
                             .catch((err2) => console.log(err2));
                     });
@@ -68,7 +68,7 @@ router.get("/login", function (req, res, next) {
 router.post("/login", function (req, res, next) {
     passport.authenticate("local", {
         successRedirect: "/authenticated/dashboard",
-        failureRedirect: "/login",
+        failureRedirect: "/auth/login",
         failureFlash: true,
     })(req, res, next);
 });
