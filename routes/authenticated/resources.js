@@ -78,6 +78,8 @@ router.post("/", async (req, res) => {
     const newResource = new Resource(req.body);
 
     await newResource.save();
+
+    res.redirect(`/authenticated/resources/${req.body.topic}`)
 });
 
 module.exports = router;
