@@ -26,6 +26,7 @@
         @import url("/css/main.css");
         @import url("/css/resources.css");
     </style>
+    <script src="/js/vote.js"></script>
 </head>
 
 <body>
@@ -63,139 +64,28 @@
                         {% for resource in resources %}
                         <div class="resource">
                             <div class="vote">
-                                <div><i class="fas fa-arrow-up"></i></div>
-                                <div class="vote-number">
+                                <button onclick="vote({{resource.id}}, 1)"><i class="fas fa-arrow-up"></i></button>
+                                <div class="vote-number" id="vote-num-{{resource.id}}">
                                     { resource.votes }
                                 </div>
-                                <div><i class="fas fa-arrow-down"></i></div>
+                                <button onclick="vote({{resource.id}}, -1)"><i class="fas fa-arrow-down"></i></button>
                             </div>
                             <div class="info">
                                 <div class="resource-title">
-                                    { resource.title }
+                                    <a href="">{ resource.title }</a>
                                 </div>
                                 <div class="resource-desc">
-                                    { resource.description }
+                                    <b>Description: </b>{ resource.description }
                                 </div>
                                 <div class="resource-link">
-                                    { resource.link }
+                                    <b>Resource link: </b>{ resource.link }
                                 </div>
                                 <div class="resource-level">
-                                    { resource.experienceLevel }
+                                    <b>Experience level: </b>{ resource.experienceLevel }
                                 </div>
                             </div>
                         </div>
                         {% endfor %}
-                        <!-- <div class="resource">
-                            <div class="vote">
-                                <div><i class="fas fa-arrow-up"></i></div>
-                                <div class="vote-number">14</div>
-                                <div><i class="fas fa-arrow-down"></i></div>
-                            </div>
-                            <div class="info">
-                                <div class="resource-title">title</div>
-                                <div class="resource-desc">desc</div>
-                                <div class="resource-link">link</div>
-                                <div class="resource-level">level</div>
-                            </div>
-                        </div>
-                        <div class="resource">
-                            <div class="vote">
-                                <div><i class="fas fa-arrow-up"></i></div>
-                                <div class="vote-number">14</div>
-                                <div><i class="fas fa-arrow-down"></i></div>
-                            </div>
-                            <div class="info">
-                                <div class="resource-title">title</div>
-                                <div class="resource-desc">desc</div>
-                                <div class="resource-link">link</div>
-                                <div class="resource-level">level</div>
-                            </div>
-                        </div>
-                        <div class="resource">
-                            <div class="vote">
-                                <div><i class="fas fa-arrow-up"></i></div>
-                                <div class="vote-number">14</div>
-                                <div><i class="fas fa-arrow-down"></i></div>
-                            </div>
-                            <div class="info">
-                                <div class="resource-title">title</div>
-                                <div class="resource-desc">desc</div>
-                                <div class="resource-link">link</div>
-                                <div class="resource-level">level</div>
-                            </div>
-                            <div class="resource">
-                                <div class="vote">
-                                    <div><i class="fas fa-arrow-up"></i></div>
-                                    <div class="vote-number">14</div>
-                                    <div><i class="fas fa-arrow-down"></i></div>
-                                </div>
-                                <div class="info">
-                                    <div class="resource-title">title</div>
-                                    <div class="resource-desc">desc</div>
-                                    <div class="resource-link">link</div>
-                                    <div class="resource-level">level</div>
-                                </div>
-                            </div>
-                            <div class="resource">
-                                <div class="vote">
-                                    <div><i class="fas fa-arrow-up"></i></div>
-                                    <div class="vote-number">14</div>
-                                    <div><i class="fas fa-arrow-down"></i></div>
-                                </div>
-                                <div class="info">
-                                    <div class="resource-title">title</div>
-                                    <div class="resource-desc">desc</div>
-                                    <div class="resource-link">link</div>
-                                    <div class="resource-level">level</div>
-                                </div>
-                            </div>
-                            <div class="resource">
-                                <div class="vote">
-                                    <div><i class="fas fa-arrow-up"></i></div>
-                                    <div class="vote-number">14</div>
-                                    <div><i class="fas fa-arrow-down"></i></div>
-                                </div>
-                                <div class="info">
-                                    <div class="resource-title">title</div>
-                                    <div class="resource-desc">desc</div>
-                                    <div class="resource-link">link</div>
-                                    <div class="resource-level">level</div>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <div class="resource-title">title</div>
-                                <div class="resource-desc">desc</div>
-                                <div class="resource-link">
-                                    linklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklinklink
-                                </div>
-                                <div class="resource-level">level</div>
-                            </div>
-                        </div>
-                        <div class="resource">
-                            <div class="vote">
-                                <div><i class="fas fa-arrow-up"></i></div>
-                                <div class="vote-number">14</div>
-                                <div><i class="fas fa-arrow-down"></i></div>
-                            </div>
-                            <div class="info">
-                                <div class="resource-title">title</div>
-                                <div class="resource-desc">desc</div>
-                                <div class="resource-link">link</div>
-                                <div class="resource-level">level</div>
-                            </div>
-                            <div class="resource">
-                                <div class="vote">
-                                    <div><i class="fas fa-arrow-up"></i></div>
-                                    <div class="vote-number">14</div>
-                                    <div><i class="fas fa-arrow-down"></i></div>
-                                </div>
-                                <div class="info">
-                                    <div class="resource-title">title</div>
-                                    <div class="resource-desc">desc</div>
-                                    <div class="resource-link">link</div>
-                                    <div class="resource-level">level</div>
-                                </div>
-                            </div> -->
                     </div>
                 </div>
             </div>
@@ -212,8 +102,14 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/">
+                <form method="POST" action="/authenticated/resources">
                     <div class="modal-body">
+                        <input
+                                class="form-control"
+                                type="hidden"
+                                value="{{topic._id}}"
+                                name="topic"
+                            />
                         <label for="title">Title</label>
                         <input class="form-control" type="text" placeholder="Resource title" name="title" required>
                         <label for="description">Description</label>

@@ -1,0 +1,35 @@
+section {
+    align-items: center;
+}
+
+section #container {
+    width: 100%;
+    margin: 4rem;
+}
+
+#resource-card, #comment-section{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 1.5rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+#resource-card div {
+    font-size: 1.25rem;
+}
+
+input {
+    width: max-content;
+}

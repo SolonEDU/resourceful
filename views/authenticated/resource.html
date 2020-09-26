@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Resourceful - Resource</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/0cf2afd459.js" crossorigin="anonymous"></script>
+    <style>
+        @import url("/css/main.css");
+        @import url("/css/resource.css");
+    </style>
 </head>
+
 <body>
     <main>
         <nav class="no-select">
@@ -19,6 +31,68 @@
                 <div><a href="">saved resources</a></div>
             </div>
         </nav>
+        <section class="no-select">
+            <div id="container">
+                <div id="resource-card">
+                    <h2>Resource name</h2>
+                    <div>
+                        <b>Description: </b>This is a description
+                    </div>
+                    <div>
+                        <b>Resource link: </b> <a href="http://google.com">Google</a>
+                    </div>
+                    <div>
+                        <b>Experience level: </b> Beginner
+                    </div>
+                    <div>
+                        <b>Resource type: </b> Website
+                    </div>
+                </div>
+                <div id="comment-section">
+                    <h2>Comments</h2>
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Make a comment" name="query"
+                                aria-label="comment" />
+                            <div class="input-group-append">
+                                <button style="z-index: 0" class="btn btn-outline-secondary" type="submit">
+                                    <i class="fas fa-reply"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div id="comment-section">
+                    <h2>Comments</h2>
+                    <form>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Make a comment" name="query"
+                                    aria-label="comment" />
+                                <div class="input-group-append">
+                                    <button style="z-index: 0" class="btn btn-outline-secondary" type="submit">
+                                        <i class="fas fa-reply"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="comment">
+                        This is a comment
+                    </div>
+                    <div class="comment">
+                        This is a comment
+                    </div>
+                    <div class="comment">
+                        This is a comment
+                    </div>
+                    <div class="comment">
+                        This is a comment
+                    </div>
+                </div> -->
+            </div>
+        </section>
     </main>
 </body>
+
 </html>
