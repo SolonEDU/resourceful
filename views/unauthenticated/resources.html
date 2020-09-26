@@ -1,11 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resourceful - JavaScript</title>
+    <script src="https://kit.fontawesome.com/0cf2afd459.js" crossorigin="anonymous"></script>
+    <style>
+        @import url("/css/main.css");
+        @import url("/css/resources.css");
+    </style>
+</head>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Resourceful - JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/0cf2afd459.js" crossorigin="anonymous"></script>
+    <style>
+        @import url("/css/main.css");
+        @import url("/css/resources.css");
+    </style>
+    <script src="/js/vote.js"></script>
 </head>
+
 <body>
-    
+    <main>
+        <nav class="no-select">
+            <header>
+                <h2><a href="/">Resourceful</a></h2>
+                <summary>
+                    <div>resourceful</div>
+                </summary>
+            </header>
+            <div id="user-auth-buttons">
+                <div><a href="/auth/login" class="btn btn-outline-success mx-2">log in</a></div>
+                <div><a href="/auth/register" class="btn btn-outline-success mx-2">register</a></div>
+            </div>
+        </nav>
+        <section class="no-select">
+            <div style="align-self: flex-start;"><a href="/">Back to Computer Science</a></div>
+            <h2>JavaScript</h2>
+            <div id="resource-grid">
+                <div id="filter-section">
+                    filter section
+                </div>
+                <div>
+                    <div id="resource-container">
+                        {% for resource in resources %}
+                        <div class="resource">
+                            <div class="vote">
+                                <button onclick="vote({{resource.id}}, 1)"><i class="fas fa-arrow-up"></i></button>
+                                <div class="vote-number" id="vote-num-{{resource.id}}">
+                                    {{ resource.votes }}
+                                </div>
+                                <button onclick="vote({{resource.id}}, -1)"><i class="fas fa-arrow-down"></i></button>
+                            </div>
+                            <div class="info">
+                                <div class="resource-title">
+                                    <a href="">{{ resource.title }}</a>
+                                </div>
+                                <div class="resource-desc">
+                                    <b>Description: </b>{{ resource.description }}
+                                </div>
+                                <div class="resource-link">
+                                    <b>Resource link: </b>{{ resource.link }}
+                                </div>
+                                <div class="resource-level">
+                                    <b>Experience level: </b>{{ resource.experienceLevel }}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>

@@ -46,16 +46,22 @@
                 </form>
             </div>
             <div id="category-container">
+                {% for category in categories %}
                 <div class="category">
                     <div>
-                        <div class="cat-title">Create Category</div>
+                        <!-- <div class="cat-emoji">💻</div> -->
+                        <div class="cat-title">{{ category.name }}</div>
                     </div>
-                    <button type="button" class="arrow-container" data-toggle="modal"
-                        data-target="#create-category-modal">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    <div class="arrow-container">
+                        <a
+                            href="/unauthenticated/topics/category/{{category._id}}"
+                        >
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="category">
+                {% endfor %}
+                <!-- <div class="category">
                     <div>
                         <div class="cat-emoji">💻</div>
                         <div class="cat-title">Computer Science</div>
@@ -142,31 +148,10 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
-    <div class="modal fade" id="create-category-modal" tabindex="-1" aria-labelledby="create-category-label"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title">Create Category</h2>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form method="POST" action="/">
-                    <div class="modal-body">
-                        <input class="form-control" type="text" placeholder="Category name" name="name">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Create Category</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
