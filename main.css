@@ -12,6 +12,16 @@ body {
                 repeating-linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%); */
 }
 
+.no-select {
+    -webkit-touch-callout: default; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                            supported by Chrome, Opera and Firefox */
+}
+
 main {
     height: 100%;
     width: 100%;
@@ -22,16 +32,11 @@ section {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    box-sizing: border-box;
     flex-direction: column;
     text-align: center;
-    -webkit-touch-callout: default; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                            supported by Chrome, Opera and Firefox */
 }
 
 nav {
@@ -43,44 +48,33 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: white;
+    z-index: 1;
 }
 
 nav header {
     box-sizing: border-box;
-    width: min-content;
+    width: max-content;
 }
 
 nav header h2 {
     padding: 0;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 nav header summary div {
     visibility: hidden;
-    font-size: 0.4rem;
+    font-size: 0.5rem;
 }
 
-section header {
-    text-align: left;
-    /* color: white; */
-    color: black;
-    margin-bottom: 2rem;
-}
-
-
-h1 {
-    font-size: 4.5rem;
-    margin-bottom: 0;
-}
-
-summary {
+nav summary, #action {
     font-style: italic;
     text-decoration: none;
     position: relative;
 }
 
-summary:after {
+nav summary:after, #action:after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -88,13 +82,16 @@ summary:after {
     left: -0.15em;
     right: -0.15em;
     bottom: 0;
-    background-color: rgba(240, 56, 56, 0.767);
-    /* background-color: #77dd77ce; */
-    /* background-color: rgba(70, 255, 178, 0.767); */
+    background-color: #89e894d5;
 }
 
 #action {
     font-weight: bold;
+}
+
+section summary {
+    font-size: 1.75rem;
+    font-weight: 400;
 }
 
 #user-auth-buttons {
