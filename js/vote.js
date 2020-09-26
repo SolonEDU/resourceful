@@ -11,6 +11,7 @@ function vote(resourceID, voteVal) {
         }
     }
     let body = encodeURI(`resourceId=${resourceID}&value=${voteVal}`);
+    console.log(body);
     xhttp.open('POST', '/authenticated/votes', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(body);

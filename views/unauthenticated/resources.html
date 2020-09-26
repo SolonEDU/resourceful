@@ -2,17 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resourceful - JavaScript</title>
-    <script src="https://kit.fontawesome.com/0cf2afd459.js" crossorigin="anonymous"></script>
-    <style>
-        @import url("/css/main.css");
-        @import url("/css/resources.css");
-    </style>
-</head>
-
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resourceful - JavaScript</title>
@@ -26,7 +15,6 @@
         @import url("/css/main.css");
         @import url("/css/resources.css");
     </style>
-    <script src="/js/vote.js"></script>
 </head>
 
 <body>
@@ -46,29 +34,19 @@
         <section class="no-select">
             <h2>JavaScript</h2>
             <div id="resource-grid">
-                <div id="filter-section">
-                    filter section
-                </div>
                 <div>
                     <div id="resource-container">
                         {% for resource in resources %}
                         <div class="resource">
-                            <div class="vote">
-                                <button onclick="vote({{resource.id}}, 1)"><i class="fas fa-arrow-up"></i></button>
-                                <div class="vote-number" id="vote-num-{{resource.id}}">
-                                    {{ resource.votes }}
-                                </div>
-                                <button onclick="vote({{resource.id}}, -1)"><i class="fas fa-arrow-down"></i></button>
-                            </div>
                             <div class="info">
                                 <div class="resource-title">
-                                    <a href="">{{ resource.title }}</a>
+                                    <a href="/unauthenticated/resources/{{resource.id}}">{{ resource.title }}</a>
                                 </div>
                                 <div class="resource-desc">
                                     <b>Description: </b>{{ resource.description }}
                                 </div>
                                 <div class="resource-link">
-                                    <b>Resource link: </b>{{ resource.link }}
+                                    <b>Resource link: </b><a style="color: blue;" href="{{ resource.link }}">{{ resource.link }}</a>
                                 </div>
                                 <div class="resource-level">
                                     <b>Experience level: </b>{{ resource.experienceLevel }}

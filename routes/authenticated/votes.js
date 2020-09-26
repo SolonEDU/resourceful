@@ -7,12 +7,12 @@ const Resource = require("../../models/Resource");
 // POST create vote handle
 router.post("/", async (req, res, next) => {
     const userId = req.session.passport.user;
-    const { resourceId, value } = req.body;
+    let { resourceId, value } = req.body;
 
-    const voteVal = Number(value);
+    value = Number(value);
 
     const newVote = new Vote({
-        voteVal,
+        value,
         resource: resourceId,
         user: userId,
     });
