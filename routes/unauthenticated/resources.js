@@ -3,14 +3,17 @@ const router = express.Router();
 
 const Comment = require("../../models/Comment");
 const Resource = require("../../models/Resource");
+const Topic = require("../../models/Topic");
 
 // GET resources for a topic page
 router.get("/topic/:topicId", async (req, res, next) => {
     const { topicId } = req.params;
 
+    const topic = await Topic.findById(topicId);
+
     const resources = await Resource.find({ topic: topicId });
 
-    res.render("unauthenticated/resources.html", { resources });
+    res.render("unauthenticated/resources.html", { topic, resources });
 });
 
 // GET resource with comments page

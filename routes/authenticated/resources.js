@@ -4,12 +4,15 @@ const router = express.Router();
 const Comment = require("../../models/Comment");
 const Resource = require("../../models/Resource");
 const Vote = require("../../models/Vote");
+const Topic = require("../../models/Topic");
 
 // GET resources for a topic page
 router.get("/topic/:topicId", async (req, res, next) => {
     const { id } = req.session.passport.user;
 
     const { topicId } = req.params;
+
+    const topic = await Topic.findById(topicId);
 
     const resources = await Resource.find({ topic: topicId });
 
@@ -23,7 +26,7 @@ router.get("/topic/:topicId", async (req, res, next) => {
         });
     });
 
-    res.render("authenticated/resources.html", { resources });
+    res.render("authenticated/resources.html", { topic, resources });
 });
 
 // GET resource with comments page
