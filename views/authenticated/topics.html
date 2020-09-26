@@ -42,27 +42,7 @@
                     <a href="/">Back to Categories</a>
                 </div>
                 <div id="search-prompt">
-                    <summary>{{ category.name }}</summary>
-                    <form method="GET" action="/search">
-                        <div class="input-group">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Search for topics within Computer Science"
-                                name="query"
-                                aria-label="Resource search query"
-                            />
-                            <div class="input-group-append">
-                                <button
-                                    style="z-index: 0"
-                                    class="btn btn-outline-secondary"
-                                    type="submit"
-                                >
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <summary><b>{{ category.name }}</b></summary>
                 </div>
                 <div id="topic-container">
                     <div class="topic">
