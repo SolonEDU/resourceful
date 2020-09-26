@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resourceful - </title>
+    <title>Resourceful - Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -32,13 +32,12 @@
             </div>
         </nav>
         <section class="no-select">
-            <div style="align-self: flex-start;"><a href="/">Back to Categories</a></div>
             <div id="search-prompt">
                 <summary>find the best resources to start learning anything <span id="action">now</span></summary>
                 <form method="GET" action="/search">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for topics within Computer Science"
-                            name="query" aria-label="Resource search query">
+                        <input type="text" class="form-control" placeholder="Search for topics" name="query"
+                            aria-label="Resource search query">
                         <div class="input-group-append">
                             <button style="z-index: -1;" class="btn btn-outline-secondary" type="submit"><i
                                     class="fas fa-search"></i></button>
@@ -46,19 +45,20 @@
                     </div>
                 </form>
             </div>
-            <div id="topic-container">
-                <div class="topic">
+            <div id="category-container">
+                <div class="category">
                     <div>
-                        <div class="topic-title">Create Topic</div>
+                        <div class="cat-title">Create Category</div>
                     </div>
-                    <button type="button" class="arrow-container" data-toggle="modal" data-target="#create-topic-modal">
+                    <button type="button" class="arrow-container" data-toggle="modal"
+                        data-target="#create-category-modal">
                         <i class="fas fa-plus"></i>
                     </button>
                 </div>
-                <div class="topic">
+                <div class="category">
                     <div>
-                        <div class="topic-title">Data Structures</div>
-                        <div class="topic-num">9 resources</div>
+                        <div class="cat-emoji">💻</div>
+                        <div class="cat-title">Computer Science</div>
                     </div>
                     <div class="arrow-container">
                         <a href="http://google.com">
@@ -66,10 +66,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="topic">
+                <div class="category">
                     <div>
-                        <div class="topic-title">JavaScript</div>
-                        <div class="topic-num">10 resources</div>
+                        <div class="cat-emoji">🎶</div>
+                        <div class="cat-title">Music</div>
                     </div>
                     <div class="arrow-container">
                         <a href="http://google.com">
@@ -77,10 +77,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="topic">
+                <div class="category">
                     <div>
-                        <div class="topic-title">Python</div>
-                        <div class="topic-num">24 resources</div>
+                        <div class="cat-emoji">📚</div>
+                        <div class="cat-title">Literature</div>
                     </div>
                     <div class="arrow-container">
                         <a href="http://google.com">
@@ -88,10 +88,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="topic">
+                <div class="category">
                     <div>
-                        <div class="topic-title">Artificial Intelligence</div>
-                        <div class="topic-num">4 resources</div>
+                        <div class="cat-emoji">➗</div>
+                        <div class="cat-title">Mathematics</div>
                     </div>
                     <div class="arrow-container">
                         <a href="http://google.com">
@@ -99,10 +99,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="topic">
+                <div class="category">
                     <div>
-                        <div class="topic-title">Blockchain</div>
-                        <div class="topic-num">6 resources</div>
+                        <div class="cat-emoji">💸</div>
+                        <div class="cat-title">Finance</div>
                     </div>
                     <div class="arrow-container">
                         <a href="http://google.com">
@@ -110,10 +110,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="topic">
+                <div class="category">
                     <div>
-                        <div class="topic-title">Java</div>
-                        <div class="topic-num">12 resources</div>
+                        <div class="cat-emoji">🏥</div>
+                        <div class="cat-title">Health</div>
                     </div>
                     <div class="arrow-container">
                         <a href="http://google.com">
@@ -121,10 +121,21 @@
                         </a>
                     </div>
                 </div>
-                <div class="topic">
+                <div class="category">
                     <div>
-                        <div class="topic-title">Databases</div>
-                        <div class="topic-num">7 resources</div>
+                        <div class="cat-emoji">🎨</div>
+                        <div class="cat-title">Art</div>
+                    </div>
+                    <div class="arrow-container">
+                        <a href="http://google.com">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div>
+                        <div class="cat-emoji">💭</div>
+                        <div class="cat-title">Philosophy</div>
                     </div>
                     <div class="arrow-container">
                         <a href="http://google.com">
@@ -135,22 +146,22 @@
             </div>
         </section>
     </main>
-    <div class="modal fade" id="create-topic-modal" tabindex="-1" aria-labelledby="create-topic-label"
+    <div class="modal fade" id="create-category-modal" tabindex="-1" aria-labelledby="create-category-label"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title">Create Topic</h2>
+                    <h2 class="modal-title">Create Category</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <form method="POST" action="/">
                     <div class="modal-body">
-                        <input class="form-control" type="text" placeholder="Topic name" name="name">
+                        <input class="form-control" type="text" placeholder="Category name" name="name">
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Create Topic</button>
+                        <button type="submit" class="btn btn-success">Create Category</button>
                     </div>
                 </form>
             </div>
