@@ -28,7 +28,7 @@ router.get("/topic/:topicId", async (req, res, next) => {
         });
     });
 
-    res.render("authenticated/resources.html", { topic, resources, userId });
+    res.render("authenticated/resources.html", { topic, resources });
 });
 
 // GET filtered resources
