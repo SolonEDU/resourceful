@@ -1,7 +1,9 @@
-# resourceful: SBUHacks 2020
-We can teach ourselves anything with the Internet, but it is often challenging to find reliable resources to learn from. Resourceful makes it easy to find the best resources to learn any topic.
+# resourceful
+We can teach ourselves anything with the Internet, but it is often challenging to find reliable resources to learn from. Resourceful makes it easy to find the best resources to learn any topic. This website won Best UI/UX (Aurora Hack) at SBUHacks 2020.
 
 [Live Site](https://resourceful-solon.herokuapp.com/)
+
+[Devpost](https://devpost.com/software/resourceful-mh3d5k)
 
 ## Inspiration
 Our team noticed that whenever trying to learn something new, whether it be programming languages or a new instrument, it can be difficult to find the best resources to get started with. With the modern Internet and information overload, there is often too much to choose from, and this can be an intimidating thing for beginners. Resourceful aims to solve this issue by making it easy to find the best resources for any topic, so you can focus on learning, not going on a scavenger hunt for resources.
